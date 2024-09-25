@@ -1,0 +1,55 @@
+
+interface ExtraCurricular {
+    void participate();
+}
+
+
+class Person {
+    String name;
+
+    Person(String name) {
+        this.name = name;
+    }
+
+    void displayInfo() {
+        System.out.println("Name: " + name);
+    }
+}
+
+
+class Student extends Person {
+    Student(String name) {
+        super(name);
+    }
+}
+
+// Subclass 2
+class CollegeStudent extends Person implements ExtraCurricular {
+    String collegeName;
+
+    CollegeStudent(String name, String collegeName) {
+        super(name);
+        this.collegeName = collegeName;
+    }
+
+    void displayInfo() {
+        super.displayInfo();
+        System.out.println("College Name: " + collegeName);
+    }
+
+    public void participate() {
+        System.out.println(name + " participates in college activities.");
+    }
+}
+
+public class Hybrid {
+    public static void main(String[] args) {
+        Student student1 = new Student("Umar Mulla");
+        CollegeStudent student2 = new CollegeStudent("Jahir", "AIKTC");
+        
+        student1.displayInfo();
+        System.out.println(); // For better output separation
+        student2.displayInfo();
+        student2.participate();
+    }
+}
