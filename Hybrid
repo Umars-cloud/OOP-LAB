@@ -48,7 +48,7 @@ public class Hybrid {
         CollegeStudent student2 = new CollegeStudent("Jahir", "AIKTC");
         
         student1.displayInfo();
-        System.out.println(); // For better output separation
+        System.out.println(); 
         student2.displayInfo();
         student2.participate();
     }
